@@ -21,3 +21,8 @@
 
 en:
   hello: "Hello world"
+  heroes:
+    zero: no heroes
+    one: hero
+    other: #{count} heroes
+

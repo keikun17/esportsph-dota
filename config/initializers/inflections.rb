@@ -10,6 +10,11 @@
 #   inflect.uncountable %w( fish sheep )
 # end
 
+# Non Locale Specific
+ActiveSupport::Inflector.inflections do |inflect|
+  inflect.plural(/^(hero)$/i, '\1es')
+end
+
 # These inflection rules are supported but not enabled by default:
 # ActiveSupport::Inflector.inflections(:en) do |inflect|
 #   inflect.acronym 'RESTful'
