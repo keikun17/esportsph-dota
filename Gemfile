@@ -35,13 +35,12 @@ end
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Use Capistrano for deployment
-# gem 'capistrano', group: :development
+gem 'capistrano', group: :development
 
-# Use debugger
-# gem 'debugger', group: [:development, :test]
+gem 'pry', group: [:development, :test]
 
 gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
   :git => 'git://github.com/anjlab/bootstrap-rails.git',
@@ -52,3 +51,12 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'annotate'
 end
+
+# Admin
+gem 'fastercsv'
+gem 'rails_admin'
+
+gem 'devise'
+
+gem 'haml'
+
