@@ -36,9 +36,14 @@ ActiveRecord::Schema.define(version: 20130706095352) do
   end
 
   create_table "team_matches", force: true do |t|
-    t.integer "match_id"
-    t.integer "team_id"
+    t.integer  "match_id"
+    t.integer  "team_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
+
+  add_index "team_matches", ["match_id"], name: "index_team_matches_on_match_id", using: :btree
+  add_index "team_matches", ["team_id"], name: "index_team_matches_on_team_id", using: :btree
 
   create_table "teams", force: true do |t|
     t.string   "name"
