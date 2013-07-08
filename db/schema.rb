@@ -13,31 +13,31 @@
 
 ActiveRecord::Schema.define(version: 20130706095352) do
 
-  create_table "games", force: true do |t|
-    t.string   "name"
-    t.integer  "winning_team_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "games", ["winning_team_id"], name: "index_games_on_winning_team_id", using: :btree
-
-  create_table "games_teams", force: true do |t|
-    t.integer "game_id"
-    t.integer "team_id"
-  end
-
   create_table "heroes", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  create_table "matches", force: true do |t|
+    t.string   "name"
+    t.integer  "winning_team_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "matches", ["winning_team_id"], name: "index_matches_on_winning_team_id", using: :btree
+
   create_table "players", force: true do |t|
     t.string   "name"
     t.integer  "team_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "team_matches", force: true do |t|
+    t.integer "match_id"
+    t.integer "team_id"
   end
 
   create_table "teams", force: true do |t|

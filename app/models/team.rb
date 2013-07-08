@@ -1,7 +1,7 @@
 class Team < ActiveRecord::Base
   #habtm mapping
-  has_many :games_teams
+  has_many :team_matches
 
-  has_many :games, through: :games_teams
+  has_many :matches, through: :team_matches
   has_many :players
 end
