@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130706095352) do
+ActiveRecord::Schema.define(version: 20130708223834) do
+
+  create_table "hero_selections", force: true do |t|
+    t.integer "player_match_id"
+    t.integer "hero_id"
+  end
+
+  add_index "hero_selections", ["hero_id"], name: "index_hero_selections_on_hero_id", using: :btree
+  add_index "hero_selections", ["player_match_id"], name: "index_hero_selections_on_player_match_id", using: :btree
 
   create_table "heroes", force: true do |t|
     t.string   "name"
@@ -27,6 +35,16 @@ ActiveRecord::Schema.define(version: 20130706095352) do
   end
 
   add_index "matches", ["winning_team_id"], name: "index_matches_on_winning_team_id", using: :btree
+
+  create_table "player_matches", force: true do |t|
+    t.integer  "match_id"
+    t.integer  "player_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "player_matches", ["match_id"], name: "index_player_matches_on_match_id", using: :btree
+  add_index "player_matches", ["player_id"], name: "index_player_matches_on_player_id", using: :btree
 
   create_table "players", force: true do |t|
     t.string   "name"
