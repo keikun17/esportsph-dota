@@ -1,7 +1,3 @@
 class Hero < ActiveRecord::Base
-
-  def pick_hero(hero, match)
-
-  end
-
+  has_many :player_matches, foreign_key: :hero_selection
 end
