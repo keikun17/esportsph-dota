@@ -42,10 +42,6 @@ gem 'capistrano', group: :development
 
 gem 'pry', group: [:development, :test]
 
-gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
-  :git => 'git://github.com/anjlab/bootstrap-rails.git',
-  :branch => '3.0.0'
-
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
