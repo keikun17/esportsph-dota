@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130710035332) do
+ActiveRecord::Schema.define(version: 20130711144826) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                              default: "", null: false
@@ -43,6 +43,12 @@ ActiveRecord::Schema.define(version: 20130710035332) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "match_banned_heroes", force: true do |t|
+    t.integer "team_id"
+    t.integer "match_id"
+    t.integer "hero_id"
   end
 
   create_table "matches", force: true do |t|
