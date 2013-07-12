@@ -31,6 +31,12 @@ ActiveRecord::Schema.define(version: 20130711144826) do
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true, using: :btree
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
 
+  create_table "hero_bans", force: true do |t|
+    t.integer "team_id"
+    t.integer "match_id"
+    t.integer "hero_id"
+  end
+
   create_table "hero_selections", force: true do |t|
     t.integer "player_match_id"
     t.integer "hero_id"
@@ -43,12 +49,6 @@ ActiveRecord::Schema.define(version: 20130711144826) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "match_banned_heroes", force: true do |t|
-    t.integer "team_id"
-    t.integer "match_id"
-    t.integer "hero_id"
   end
 
   create_table "matches", force: true do |t|

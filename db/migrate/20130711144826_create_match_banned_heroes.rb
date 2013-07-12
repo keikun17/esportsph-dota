@@ -1,6 +1,6 @@
 class CreateMatchBannedHeroes < ActiveRecord::Migration
   def change
-    create_table :match_banned_heroes do |t|
+    create_table :hero_bans do |t|
       t.references :team
       t.references :match
       t.references :hero
