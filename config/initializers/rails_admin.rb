@@ -30,7 +30,7 @@ RailsAdmin.config do |config|
   # config.excluded_models = ['Hero', 'HeroSelection', 'Match', 'Player', 'PlayerMatch', 'Team', 'TeamMatch']
 
   # Include specific models (exclude the others):
-  # config.included_models = ['Hero', 'HeroSelection', 'Match', 'Player', 'PlayerMatch', 'Team', 'TeamMatch']
+  config.included_models = ['Hero', 'Match', 'Player', 'Team']
 
   # Label methods for model instances:
   # config.label_methods << :description # Default is [:name, :title]
