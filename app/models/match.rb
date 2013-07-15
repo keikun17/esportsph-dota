@@ -19,6 +19,15 @@ class Match < ActiveRecord::Base
       field :teams
     end
   end
+
+  def team_1
+    teams.first
+  end
+
+  def team_2
+    teams.last
+  end
+
 end
 
 # == Schema Information
