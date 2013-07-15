@@ -1,0 +1,21 @@
+!!!
+%html
+  %head
+    %title EsportsphDota
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+
+  -# TODO: body class that has padding 60 or find proper way of spacing this
+  %body{style: 'padding-top: 60px'}
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container-fluid
+          %a.brand Esportsph Dota
+          .nav-collapse
+            %ul.nav.pull-right
+              %li
+                %a
+                  %span.label.label-important Log Out
+    .container-fluid
+      = yield
