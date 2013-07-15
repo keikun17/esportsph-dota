@@ -3,16 +3,11 @@
   = f.text_field :name
 
   %br
-  Team 1
+  Teams
   #team-matches-fields
-    = f.fields_for match.team_matches.new do |ff|
-      = ff.select :team, @teams.collect{|x| [x.name, x.id] }
-
-  %br
-  Team 2
-  #team-matches-fields
-    = f.fields_for match.team_matches.new do |ff|
-      = ff.select :team, @teams.collect{|x| [x.name, x.id] }
+    %ul
+    = f.fields_for :team_matches do |ff|
+      %li= ff.select :team_id, @teams.collect{|x| [x.name, x.id] }
 
   %br
   = f.submit "Save"

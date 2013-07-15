@@ -1,10 +1,14 @@
 class Match < ActiveRecord::Base
   #habtm mapping
   has_many :team_matches
+  has_many :player_matches
+  accepts_nested_attributes_for :team_matches
+  accepts_nested_attributes_for :player_matches
+
   has_many :hero_bans
 
   has_many :teams, through: :team_matches
-  has_many :players, through: :teams
+  has_many :players, through: :player_matches
 
   belongs_to :winner, class_name: 'Team', foreign_key: :winning_team_id
 

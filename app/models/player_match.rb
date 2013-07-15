@@ -1,6 +1,8 @@
 class PlayerMatch < ActiveRecord::Base
   belongs_to :player
   belongs_to :match
+  belongs_to :team
+
   has_one :hero_selection
 
   validates :player_id, presence: true
