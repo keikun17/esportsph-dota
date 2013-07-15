@@ -16,3 +16,15 @@ class Match < ActiveRecord::Base
     end
   end
 end
+
+# == Schema Information
+#
+# Table name: matches
+#
+#  id              :integer          not null, primary key
+#  name            :string(255)
+#  winning_team_id :integer
+#  created_at      :datetime
+#  updated_at      :datetime
+#
+

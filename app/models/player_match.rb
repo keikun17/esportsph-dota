@@ -6,3 +6,15 @@ class PlayerMatch < ActiveRecord::Base
   validates :player_id, presence: true
   validates :match_id, presence: true
 end
+
+# == Schema Information
+#
+# Table name: player_matches
+#
+#  id         :integer          not null, primary key
+#  match_id   :integer
+#  player_id  :integer
+#  created_at :datetime
+#  updated_at :datetime
+#
+
