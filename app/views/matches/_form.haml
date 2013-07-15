@@ -1,0 +1,18 @@
+= form_for match do |f|
+  = f.label 'Match Name'
+  = f.text_field :name
+
+  %br
+  Team 1
+  #team-matches-fields
+    = f.fields_for match.team_matches.new do |ff|
+      = ff.select :team, @teams.collect{|x| [x.name, x.id] }
+
+  %br
+  Team 2
+  #team-matches-fields
+    = f.fields_for match.team_matches.new do |ff|
+      = ff.select :team, @teams.collect{|x| [x.name, x.id] }
+
+  %br
+  = f.submit "Save"

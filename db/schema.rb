@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130711144826) do
+ActiveRecord::Schema.define(version: 20130715112359) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                              default: "", null: false
@@ -65,10 +65,12 @@ ActiveRecord::Schema.define(version: 20130711144826) do
     t.integer  "player_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "team_id"
   end
 
   add_index "player_matches", ["match_id"], name: "index_player_matches_on_match_id", using: :btree
   add_index "player_matches", ["player_id"], name: "index_player_matches_on_player_id", using: :btree
+  add_index "player_matches", ["team_id"], name: "index_player_matches_on_team_id", using: :btree
 
   create_table "players", force: true do |t|
     t.string   "name"
