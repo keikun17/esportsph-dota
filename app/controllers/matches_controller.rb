@@ -13,6 +13,7 @@ class MatchesController < ApplicationController
 
   def add_players
     @match = Match.find(params[:id])
+    @match.player_matches.build
   end
 
   def create

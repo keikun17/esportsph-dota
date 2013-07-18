@@ -8,8 +8,16 @@ EsportsphDota::Application.routes.draw do
   resources :matches do
     member do
       get 'add_players'
+      patch 'update_competing_players'
+    end
+
+    resources :player_matches do
+      collection do
+         get 'update_representations'
+      end
     end
   end
+
 
   # You can have the root of your site routed with "root"
   root 'matches#index'
