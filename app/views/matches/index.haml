@@ -1,13 +1,21 @@
 .row-fluid
-  .span10
-    .row-fluid
-      .content
-        = link_to "Create Match", new_match_path
+  .span12
+    .content
+      .actions
+        = link_to "Create Match", new_match_path, class: 'btn btn-primary'
 
-        %ul
+      .something
+        %table.table
+          %tr
+            %th Match Name
+            %th Match up
+            %th Actions
           - @matches.each do |match|
-            %li
-              #{match.name}
-              (#{match.team_1.name} vs #{match.team_2.name})
-              = link_to "Edit", add_players_match_path(match)
+            %tr
+              %td= match.name
+              %td
+                %strong #{match.team_1.name}
+                vs
+                %strong #{match.team_2.name}
+              %td= link_to "Edit", add_players_match_path(match)
 
