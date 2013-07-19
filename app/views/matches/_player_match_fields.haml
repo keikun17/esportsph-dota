@@ -1,2 +1,3 @@
 = f.select :player_id,  Player.all.collect{|x| [x.name, x.id]}
+= f.hidden_field :team_id
 %br
