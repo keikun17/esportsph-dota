@@ -1,32 +1,33 @@
 .row
   .span12
-    %h1= @match.name
+    %h1 Match Name : #{@match.name.titleize}
 
 %hr
 
 .row
   .span12
-    #team_1_players
-      Team 1
-      = @match.team_1.name
-      = form_for @match, method: 'patch' do |f|
+    = form_for @match, method: 'patch' do |f|
+      #team_1_players
+        %h4 Team 1 : #{@match.team_1.name}
+
+        %ul
+          - @team_1_player_matches.each do |player_match|
+            %li= player_match.player.name
+
         #players_matches-fields
-          = f.fields_for :player_matches do |builder|
-            = render 'player_match_fields', f: builder
           = link_to_add_fields "Add Player", f, :player_matches, {team_id: @match.team_1.id}
-        = f.submit
 
-%hr
 
-.row
-  .span12
-    #team_2_players
-      Team 2
-      = @match.team_2.name
-      = form_for @match, method: 'patch' do |f|
+      #team_2_players
+        %h4 Team 2 #{@match.team_2.name}
+
+        %ul
+          - @team_2_player_matches.each do |player_match|
+            %li= player_match.player.name
+
         #players_matches-fields
-          = f.fields_for :player_matches do |builder|
-            = render 'player_match_fields', f: builder
-          = link_to_add_fields "Add Player", f, :player_matches, {team_id: @match.team_2.id}
-        = f.submit
+          = link_to_add_fields "Add Player", f, :player_matches, {team_id: @match.team_2.id}, '$(this)'
 
+      .actions
+        %hr
+        = f.submit("Save Team Roster", class: 'btn btn-primary')
