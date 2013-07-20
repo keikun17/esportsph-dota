@@ -3,11 +3,12 @@ class PlayerMatch < ActiveRecord::Base
   belongs_to :match
   belongs_to :team
 
-  has_one :hero_selection
+  belongs_to :hero
 
   validates :player_id, presence: true
   validates :match_id, presence: true
   validates :team_id, presence: true
+  validates :hero_id, presence: true
 end
 
 # == Schema Information
