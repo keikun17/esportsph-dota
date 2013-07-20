@@ -25,7 +25,7 @@ class MatchesController < ApplicationController
   def update
     @match = Match.find(params[:id])
     @match.update_attributes(match_params)
-    redirect_to add_players_match_path(@match)
+    redirect_to edit_roster_match_path(@match)
   end
 
   private
