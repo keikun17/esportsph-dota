@@ -1,45 +1,44 @@
 %div{id: modal_id, class: 'modal hide fade', tab_index: '-1', role: 'dialog'}
   .modal-header
     %button.close{ data: {dismiss: "modal"}, aria: {hidden: 'true'} }
-    %h3 Player Entry
+    %h3 Player Entry for #{representative.team.name}
 
-  = form_for match, method: 'patch' do |builder|
+  = form_for representative, url: match_participants_path(match_id: representative.match.id) do |f|;
     .modal-body
-      = fields_for match.player_matches.build(team_id: team_id) do |f|
-        = f.hidden_field :team_id
-        .form-horizontal
-          .control-group
-            %label.control-label Player
-            .controls
-              = f.select :player_id,  Player.all.collect{|x| [x.name, x.id] }
+      = f.hidden_field :team_id
+      .form-horizontal
+        .control-group
+          %label.control-label Player
+          .controls
+            = f.select :player_id,  Player.all.collect{|x| [x.name, x.id] }
 
-          .control-group
-            %label.control-label Hero
-            .controls
-              = f.select :hero_id, Hero.all.collect{|x| [x.name, x.id] }
+        .control-group
+          %label.control-label Hero
+          .controls
+            = f.select :hero_id, Hero.all.collect{|x| [x.name, x.id] }
 
-          .control-group
-            %label.control-label Kills
-            .controls
-              = f.text_field :kills
+        .control-group
+          %label.control-label Kills
+          .controls
+            = f.text_field :kills
 
-          .control-group
-            %label.control-label Deaths
-            .controls
-              = f.text_field :deaths
+        .control-group
+          %label.control-label Deaths
+          .controls
+            = f.text_field :deaths
 
-          .control-group
-            %label.control-label Assists
-            .controls
-              = f.text_field :assists
+        .control-group
+          %label.control-label Assists
+          .controls
+            = f.text_field :assists
 
-          .control-group
-            %label.control-label Gold
-            .controls
-              = f.text_field :gold
+        .control-group
+          %label.control-label Gold
+          .controls
+            = f.text_field :gold
 
     .modal-footer
       = link_to "Close", '#', class: 'btn'
-      = builder.submit("Save Changes", class: 'btn btn-primary')
+      = f.submit("Save Changes", class: 'btn btn-primary')
 
 

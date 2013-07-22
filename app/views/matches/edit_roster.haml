@@ -29,7 +29,7 @@
 
       #players_matches-fields
         = link_to "Add Team 1 Player", '#team1Modal', role: "button", data: { toggle: "modal" }
-        = render 'player_match_fields', team_id: @match.team_1.id, modal_id: 'team1Modal', match: @match
+        = render 'player_match_fields', modal_id: 'team1Modal', representative: @match.player_matches.build(team_id: @match.team_1.id)
 
 
     #team_2_players
@@ -54,5 +54,5 @@
 
       #players_matches-fields
         = link_to "Add Team 2 Player", '#team2Modal', role: "button", data: { toggle: "modal" }
-        = render 'player_match_fields', team_id: @match.team_2.id, modal_id: 'team2Modal', match: @match
+        = render 'player_match_fields', modal_id: 'team2Modal', representative: @match.player_matches.build(team_id: @match.team_2.id)
 

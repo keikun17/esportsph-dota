@@ -11,11 +11,7 @@ EsportsphDota::Application.routes.draw do
       patch 'update_competing_players'
     end
 
-    resources :player_matches do
-      collection do
-         get 'update_representations'
-      end
-    end
+    resources :player_matches, as: :participants
   end
 
 
