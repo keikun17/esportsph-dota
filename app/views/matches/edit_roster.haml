@@ -1,18 +1,32 @@
 .row
   .span12
-    %h1 Match Name : #{@match.name.titleize}
+    %h1 Match Results
+    %h2 #{@match.name.titleize}
 
 %hr
 
-.row
+.row-fluid
   .span12
     = form_for @match, method: 'patch' do |f|
       #team_1_players
         %h4 Team 1 : #{@match.team_1.name}
 
-        %ul
+        %table.table
+          %tr
+            %th Player Name
+            %th Hero
+            %th Kills
+            %th Deaths
+            %th Assists
+            %th Gold
           - @team_1_player_matches.each do |player_match|
-            %li= player_match.player.name
+            %tr
+              %td= player_match.player.name
+              %td= player_match.hero.name if player_match.hero
+              %td= player_match.kills
+              %td= player_match.deaths
+              %td= player_match.assists
+              %td= player_match.gold
 
         #players_matches-fields
           = link_to_add_fields "Add Player", f, :player_matches, {team_id: @match.team_1.id}
@@ -21,9 +35,22 @@
       #team_2_players
         %h4 Team 2 #{@match.team_2.name}
 
-        %ul
+        %table.table
+          %tr
+            %th Player Name
+            %th Hero
+            %th Kills
+            %th Deaths
+            %th Assists
+            %th Gold
           - @team_2_player_matches.each do |player_match|
-            %li= player_match.player.name
+            %tr
+              %td= player_match.player.name
+              %td= player_match.hero.name if player_match.hero
+              %td= player_match.kills
+              %td= player_match.deaths
+              %td= player_match.assists
+              %td= player_match.gold
 
         #players_matches-fields
           = link_to_add_fields "Add Player", f, :player_matches, {team_id: @match.team_2.id}, '$(this)'

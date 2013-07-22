@@ -1,4 +1,34 @@
-= f.select :player_id,  Player.all.collect{|x| [x.name, x.id] }
-= f.select :hero_id, Hero.all.collect{|x| [x.name, x.id] }
+.form-horizontal
+  .control-group
+    %label.control-label Player
+    .controls
+      = f.select :player_id,  Player.all.collect{|x| [x.name, x.id] }
+
+  .control-group
+    %label.control-label Hero
+    .controls
+      = f.select :hero_id, Hero.all.collect{|x| [x.name, x.id] }
+
+  .control-group
+    %label.control-label Kills
+    .controls
+      = f.text_field :kills
+
+  .control-group
+    %label.control-label Deaths
+    .controls
+      = f.text_field :deaths
+
+  .control-group
+    %label.control-label Assists
+    .controls
+      = f.text_field :assists
+
+  .control-group
+    %label.control-label Gold
+    .controls
+      = f.text_field :gold
+
+%br
 = f.hidden_field :team_id
 %br
