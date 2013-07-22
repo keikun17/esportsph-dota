@@ -14,6 +14,7 @@ class MatchesController < ApplicationController
   def edit_roster
     @match = Match.find(params[:id])
     @team_1_player_matches = @match.player_matches.where(team: @match.team_1)
+
     @team_2_player_matches = @match.player_matches.where(team: @match.team_2)
   end
 

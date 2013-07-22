@@ -7,54 +7,52 @@
 
 .row-fluid
   .span12
-    = form_for @match, method: 'patch' do |f|
-      #team_1_players
-        %h4 Team 1 : #{@match.team_1.name}
+    #team_1_players
+      %h4 Team 1 : #{@match.team_1.name}
 
-        %table.table
+      %table.table
+        %tr
+          %th Player Name
+          %th Hero
+          %th Kills
+          %th Deaths
+          %th Assists
+          %th Gold
+        - @team_1_player_matches.each do |player_match|
           %tr
-            %th Player Name
-            %th Hero
-            %th Kills
-            %th Deaths
-            %th Assists
-            %th Gold
-          - @team_1_player_matches.each do |player_match|
-            %tr
-              %td= player_match.player.name
-              %td= player_match.hero.name if player_match.hero
-              %td= player_match.kills
-              %td= player_match.deaths
-              %td= player_match.assists
-              %td= player_match.gold
+            %td= player_match.player.name
+            %td= player_match.hero.name if player_match.hero
+            %td= player_match.kills
+            %td= player_match.deaths
+            %td= player_match.assists
+            %td= player_match.gold
 
-        #players_matches-fields
-          = link_to_add_fields "Add Player", f, :player_matches, {team_id: @match.team_1.id}
+      #players_matches-fields
+        = link_to "Add Team 1 Player", '#team1Modal', role: "button", data: { toggle: "modal" }
+        = render 'player_match_fields', team_id: @match.team_1.id, modal_id: 'team1Modal', match: @match
 
 
-      #team_2_players
-        %h4 Team 2 #{@match.team_2.name}
+    #team_2_players
+      %h4 Team 2 #{@match.team_2.name}
 
-        %table.table
+      %table.table
+        %tr
+          %th Player Name
+          %th Hero
+          %th Kills
+          %th Deaths
+          %th Assists
+          %th Gold
+        - @team_2_player_matches.each do |player_match|
           %tr
-            %th Player Name
-            %th Hero
-            %th Kills
-            %th Deaths
-            %th Assists
-            %th Gold
-          - @team_2_player_matches.each do |player_match|
-            %tr
-              %td= player_match.player.name
-              %td= player_match.hero.name if player_match.hero
-              %td= player_match.kills
-              %td= player_match.deaths
-              %td= player_match.assists
-              %td= player_match.gold
+            %td= player_match.player.name
+            %td= player_match.hero.name if player_match.hero
+            %td= player_match.kills
+            %td= player_match.deaths
+            %td= player_match.assists
+            %td= player_match.gold
 
-        #players_matches-fields
-          = link_to_add_fields "Add Player", f, :player_matches, {team_id: @match.team_2.id}, '$(this)'
+      #players_matches-fields
+        = link_to "Add Team 2 Player", '#team2Modal', role: "button", data: { toggle: "modal" }
+        = render 'player_match_fields', team_id: @match.team_2.id, modal_id: 'team2Modal', match: @match
 
-      .actions
-        %hr
-        = f.submit("Save Team Roster", class: 'btn btn-primary')
