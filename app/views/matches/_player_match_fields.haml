@@ -11,7 +11,7 @@
         .control-group
           %label.control-label Player
           .controls
-            = f.select :player_id,  Player.all.collect{|x| [x.name, x.id] }
+            = f.select :player_id, team.players.collect{|x| [x.name, x.id] }
 
         .control-group
           %label.control-label Hero
