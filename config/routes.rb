@@ -11,9 +11,9 @@ EsportsphDota::Application.routes.draw do
       patch 'update_competing_players'
     end
 
-    resources :player_matches, as: :participants
   end
 
+  resources :player_matches
 
   # You can have the root of your site routed with "root"
   root 'matches#index'

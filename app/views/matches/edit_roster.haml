@@ -18,6 +18,7 @@
           %th Deaths
           %th Assists
           %th Gold
+          %th Actions
         - @team_1_player_matches.each do |player_match|
           %tr
             %td= player_match.player.name
@@ -26,6 +27,10 @@
             %td= player_match.deaths
             %td= player_match.assists
             %td= player_match.gold
+            %td= link_to "Edit", "#edit#{player_match.id}", role: "button", data: { toggle: "modal" }
+
+        - @team_1_player_matches.each do |player_match|
+          = render 'player_match_fields', modal_id: "edit#{player_match.id}", representative: player_match
 
       #players_matches-fields
         = link_to "Add Team 1 Player", '#team1Modal', role: "button", data: { toggle: "modal" }
@@ -43,6 +48,7 @@
           %th Deaths
           %th Assists
           %th Gold
+          %th Actions
         - @team_2_player_matches.each do |player_match|
           %tr
             %td= player_match.player.name
@@ -51,6 +57,7 @@
             %td= player_match.deaths
             %td= player_match.assists
             %td= player_match.gold
+            %td= link_to "Edit", "#edit#{player_match.player_id}", role: "button", data: { toggle: "modal" }
 
       #players_matches-fields
         = link_to "Add Team 2 Player", '#team2Modal', role: "button", data: { toggle: "modal" }
