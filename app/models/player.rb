@@ -3,9 +3,7 @@ class Player < ActiveRecord::Base
   has_many :player_matches
   accepts_nested_attributes_for :player_matches
 
-  has_many :hero_selection, through: :player_matches
-
-  has_many :heroes, through: :hero_selection
+  has_many :heroes, through: :player_matches
 
   validates :name, presence: true
 
