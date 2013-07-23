@@ -7,6 +7,8 @@
     .modal-body
       = f.hidden_field :team_id
       = f.hidden_field :match_id
+
+      %h4 General Stats
       .form-horizontal
         .control-group
           %label.control-label Player
@@ -37,6 +39,23 @@
           %label.control-label Gold
           .controls
             = f.text_field :gold
+
+        .control-group
+          %label.control-label APM
+          .controls
+            = f.text_field :apm
+
+      %h4 Farm Stats
+      .form-horizontal
+        .control-group
+          %label.control-label Creep Kills
+          .controls
+            = f.text_field :creep_kills
+
+        .control-group
+          %label.control-label Creep Denies
+          .controls
+            = f.text_field :creep_denies
 
     .modal-footer
       = link_to "Close", '#', class: 'btn', data: { dismiss: 'modal' }

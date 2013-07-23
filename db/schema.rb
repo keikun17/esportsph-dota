@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130722082253) do
+ActiveRecord::Schema.define(version: 20130723135033) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                              default: "", null: false
@@ -63,6 +63,9 @@ ActiveRecord::Schema.define(version: 20130722082253) do
     t.integer  "deaths"
     t.integer  "assists"
     t.integer  "gold"
+    t.integer  "apm"
+    t.integer  "creep_kills"
+    t.integer  "creep_denies"
   end
 
   add_index "player_matches", ["hero_id"], name: "index_player_matches_on_hero_id", using: :btree
