@@ -39,7 +39,7 @@
             = f.text_field :gold
 
     .modal-footer
-      = link_to "Close", '#', class: 'btn'
+      = link_to "Close", '#', class: 'btn', data: { dismiss: 'modal' }
       = f.submit("Save Changes", class: 'btn btn-primary')
 
 
