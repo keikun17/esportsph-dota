@@ -23,6 +23,7 @@ class PlayerStatsController < ApplicationController
                                          :kills,
                                          :deaths,
                                          :assists,
-                                         :gold)
+                                         :gold,
+                                         :apm)
   end
 end
