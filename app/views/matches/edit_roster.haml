@@ -10,24 +10,7 @@
     #team_1_players
       %h4 Team 1 : #{@match.team_1.name}
 
-      %table.table
-        %tr
-          %th Player Name
-          %th Hero
-          %th K/D/A
-          %th CK/CD
-          %th Gold
-          %th APM
-          %th Actions
-        - @team_1_player_matches.each do |player_match|
-          %tr
-            %td= player_match.player.name
-            %td= player_match.hero.name if player_match.hero
-            %td  #{player_match.kills.to_i}/#{player_match.deaths}/#{player_match.assists}
-            %td  #{player_match.creep_kills.to_i}/#{player_match.creep_denies.to_i}
-            %td= player_match.gold
-            %td= player_match.apm.to_i
-            %td= link_to "Edit", "#edit#{player_match.id}", role: "button", data: { toggle: "modal" }
+      = render 'players_stats', player_stats: @team_1_player_matches
 
       - @team_1_player_matches.each do |player_match|
         = render 'player_match_fields', modal_id: "edit#{player_match.id}", representative: player_match, team: @match.team_1
@@ -39,24 +22,7 @@
     #team_2_players
       %h4 Team 2 #{@match.team_2.name}
 
-      %table.table
-        %tr
-          %th Player Name
-          %th Hero
-          %th K/D/A
-          %th CK/CD
-          %th Gold
-          %th APM
-          %th Actions
-        - @team_2_player_matches.each do |player_match|
-          %tr
-            %td= player_match.player.name
-            %td= player_match.hero.name if player_match.hero
-            %td  #{player_match.kills.to_i}/#{player_match.deaths}/#{player_match.assists}
-            %td  #{player_match.creep_kills.to_i}/#{player_match.creep_denies.to_i}
-            %td= player_match.gold
-            %td= player_match.apm.to_i
-            %td= link_to "Edit", "#edit#{player_match.id}", role: "button", data: { toggle: "modal" }
+      = render 'players_stats', player_stats: @team_2_player_matches
 
       - @team_2_player_matches.each do |player_match|
         = render 'player_match_fields', modal_id: "edit#{player_match.id}", representative: player_match, team: @match.team_2

@@ -1,0 +1,18 @@
+%table.table
+  %tr
+    %th Player Name
+    %th Hero
+    %th K/D/A
+    %th CK/CD
+    %th Gold
+    %th APM
+    %th Actions
+  - player_stats.each do |player_stat|
+    %tr
+      %td= player_stat.player.name
+      %td= player_stat.hero.name if player_stat.hero
+      %td  #{player_stat.kills.to_i}/#{player_stat.deaths}/#{player_stat.assists}
+      %td  #{player_stat.creep_kills.to_i}/#{player_stat.creep_denies.to_i}
+      %td= player_stat.gold
+      %td= player_stat.apm.to_i
+      %td= link_to "Edit", "#edit#{player_stat.id}", role: "button", data: { toggle: "modal" }
