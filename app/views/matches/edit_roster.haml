@@ -10,24 +10,24 @@
     #team_1_players
       %h4 Team 1 : #{@match.team_1.name}
 
-      = render 'players_stats', player_stats: @team_1_player_matches
+      = render 'players_stats', player_stats: @team_1_player_stats
 
-      - @team_1_player_matches.each do |player_match|
-        = render 'player_match_fields', modal_id: "edit#{player_match.id}", representative: player_match, team: @match.team_1
+      - @team_1_player_stats.each do |player_stat|
+        = render 'player_stat_fields', modal_id: "edit#{player_stat.id}", representative: player_stat, team: @match.team_1
 
       #players_matches-fields
         = link_to "Add Team 1 Player", '#team1Modal', role: "button", data: { toggle: "modal" }
-        = render 'player_match_fields', modal_id: 'team1Modal', representative: @match.player_matches.build(team_id: @match.team_1.id), team: @match.team_1
+        = render 'player_stat_fields', modal_id: 'team1Modal', representative: @match.player_stats.build(team_id: @match.team_1.id), team: @match.team_1
 
     #team_2_players
       %h4 Team 2 #{@match.team_2.name}
 
-      = render 'players_stats', player_stats: @team_2_player_matches
+      = render 'players_stats', player_stats: @team_2_player_stats
 
-      - @team_2_player_matches.each do |player_match|
-        = render 'player_match_fields', modal_id: "edit#{player_match.id}", representative: player_match, team: @match.team_2
+      - @team_2_player_stats.each do |player_stat|
+        = render 'player_stat_fields', modal_id: "edit#{player_stat.id}", representative: player_stat, team: @match.team_2
 
       #players_matches-fields
         = link_to "Add Team 2 Player", '#team2Modal', role: "button", data: { toggle: "modal" }
-        = render 'player_match_fields', modal_id: 'team2Modal', representative: @match.player_matches.build(team_id: @match.team_2.id), team: @match.team_2
+        = render 'player_stat_fields', modal_id: 'team2Modal', representative: @match.player_stats.build(team_id: @match.team_2.id), team: @match.team_2
 

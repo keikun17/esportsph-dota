@@ -13,9 +13,9 @@ class MatchesController < ApplicationController
 
   def edit_roster
     @match = Match.find(params[:id])
-    @team_1_player_matches = @match.player_matches.where(team: @match.team_1)
+    @team_1_player_stats = @match.player_stats.where(team: @match.team_1)
 
-    @team_2_player_matches = @match.player_matches.where(team: @match.team_2)
+    @team_2_player_stats = @match.player_stats.where(team: @match.team_2)
   end
 
   def create
@@ -34,7 +34,7 @@ class MatchesController < ApplicationController
   def match_params
     params.require(:match).permit(:name,
                                   team_matches_attributes: [:team_id],
-                                  player_matches_attributes: [:player_id,
+                                  player_stats: [:player_id,
                                                               :hero_id,
                                                               :team_id,
                                                               :kills,

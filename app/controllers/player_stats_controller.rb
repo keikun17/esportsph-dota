@@ -1,22 +1,22 @@
-class PlayerMatchesController < ApplicationController
+class PlayerStatsController < ApplicationController
 
   def update
-    @player_match = PlayerMatch.find(params[:id])
-    @player_match.update_attributes(player_match_params)
+    @player_stat = PlayerStat.find(params[:id])
+    @player_stat.update_attributes(player_stat_params)
 
     redirect_to :back
   end
 
   def create
-    @player_match = PlayerMatch.create(player_match_params)
+    @player_stat = PlayerStat.create(player_stat_params)
 
     redirect_to :back
   end
 
   private
 
-  def player_match_params
-    params.require(:player_match).permit(:player_id,
+  def player_stat_params
+    params.require(:player_stat).permit(:player_id,
                                          :match_id,
                                          :hero_id,
                                          :team_id,

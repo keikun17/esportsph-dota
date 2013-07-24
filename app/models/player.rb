@@ -1,9 +1,9 @@
 class Player < ActiveRecord::Base
   belongs_to :team
-  has_many :player_matches
-  accepts_nested_attributes_for :player_matches
+  has_many :player_stats
+  accepts_nested_attributes_for :player_stats
 
-  has_many :heroes, through: :player_matches
+  has_many :heroes, through: :player_stats
 
   validates :name, presence: true
 

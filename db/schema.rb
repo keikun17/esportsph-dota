@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130723135033) do
+ActiveRecord::Schema.define(version: 20130724105042) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                              default: "", null: false
@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 20130723135033) do
 
   add_index "matches", ["winning_team_id"], name: "index_matches_on_winning_team_id", using: :btree
 
-  create_table "player_matches", force: true do |t|
+  create_table "player_stats", force: true do |t|
     t.integer  "match_id"
     t.integer  "player_id"
     t.datetime "created_at"
@@ -68,10 +68,10 @@ ActiveRecord::Schema.define(version: 20130723135033) do
     t.integer  "creep_denies"
   end
 
-  add_index "player_matches", ["hero_id"], name: "index_player_matches_on_hero_id", using: :btree
-  add_index "player_matches", ["match_id"], name: "index_player_matches_on_match_id", using: :btree
-  add_index "player_matches", ["player_id"], name: "index_player_matches_on_player_id", using: :btree
-  add_index "player_matches", ["team_id"], name: "index_player_matches_on_team_id", using: :btree
+  add_index "player_stats", ["hero_id"], name: "index_player_stats_on_hero_id", using: :btree
+  add_index "player_stats", ["match_id"], name: "index_player_stats_on_match_id", using: :btree
+  add_index "player_stats", ["player_id"], name: "index_player_stats_on_player_id", using: :btree
+  add_index "player_stats", ["team_id"], name: "index_player_stats_on_team_id", using: :btree
 
   create_table "players", force: true do |t|
     t.string   "name"

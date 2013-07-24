@@ -60,7 +60,7 @@ RailsAdmin.config do |config|
 
   #   # Found associations:
 
-  #     configure :player_matches, :has_many_association 
+  #     configure :player_stats, :has_many_association 
 
   #   # Found columns:
 
@@ -103,13 +103,13 @@ RailsAdmin.config do |config|
 
   #   # Found associations:
 
-  #     configure :player_match, :belongs_to_association 
+  #     configure :player_stat, :belongs_to_association 
   #     configure :hero, :belongs_to_association 
 
   #   # Found columns:
 
   #     configure :id, :integer 
-  #     configure :player_match_id, :integer         # Hidden 
+  #     configure :player_stat, :integer         # Hidden 
   #     configure :hero_id, :integer         # Hidden 
 
   #   # Cross-section configuration:
@@ -194,7 +194,7 @@ RailsAdmin.config do |config|
   #   # Found associations:
 
   #     configure :team, :belongs_to_association 
-  #     configure :player_matches, :has_many_association 
+  #     configure :player_stats, :has_many_association 
   #     configure :picked_heroes, :has_many_association 
 
   #   # Found columns:
@@ -235,7 +235,7 @@ RailsAdmin.config do |config|
 
   # config.model 'PlayerMatch' do
 
-  #   # You can copy this to a 'rails_admin do ... end' block inside your player_match.rb model definition
+  #   # You can copy this to a 'rails_admin do ... end' block inside your player_stat.rb model definition
 
   #   # Found associations:
 

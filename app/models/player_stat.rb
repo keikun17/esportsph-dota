@@ -1,4 +1,4 @@
-class PlayerMatch < ActiveRecord::Base
+class PlayerStat < ActiveRecord::Base
   belongs_to :player
   belongs_to :match
   belongs_to :team
@@ -13,7 +13,7 @@ end
 
 # == Schema Information
 #
-# Table name: player_matches
+# Table name: player_stats
 #
 #  id         :integer          not null, primary key
 #  match_id   :integer
