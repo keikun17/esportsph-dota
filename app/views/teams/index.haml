@@ -1,0 +1,9 @@
+%table.table
+  %tr
+    %th #
+    %th Team Name
+  - @teams.each do |team|
+    %tr
+      %td= team.id
+      %td= link_to team.name, team_path(team)
+
