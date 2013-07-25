@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 20130725135931) do
     t.integer  "winning_team_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "duration"
+    t.integer  "duration",        default: 0
   end
 
   add_index "matches", ["winning_team_id"], name: "index_matches_on_winning_team_id", using: :btree

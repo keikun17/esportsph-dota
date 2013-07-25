@@ -18,7 +18,7 @@
                 %strong #{match.team_1.name}
                 vs
                 %strong #{match.team_2.name}
-              %td= match.duration
+              %td= display_duration(match.duration.to_i)
 
               %td= link_to "Edit Roster", edit_roster_match_path(match)
 
