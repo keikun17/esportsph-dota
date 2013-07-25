@@ -15,10 +15,19 @@ end
 #
 # Table name: player_stats
 #
-#  id         :integer          not null, primary key
-#  match_id   :integer
-#  player_id  :integer
-#  created_at :datetime
-#  updated_at :datetime
+#  id           :integer          not null, primary key
+#  match_id     :integer
+#  player_id    :integer
+#  created_at   :datetime
+#  updated_at   :datetime
+#  team_id      :integer
+#  hero_id      :integer
+#  kills        :integer
+#  deaths       :integer
+#  assists      :integer
+#  gold         :integer
+#  apm          :integer
+#  creep_kills  :integer
+#  creep_denies :integer
 #
 
