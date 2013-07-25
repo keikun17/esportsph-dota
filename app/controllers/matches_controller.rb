@@ -35,13 +35,6 @@ class MatchesController < ApplicationController
     params.require(:match).permit(:name,
                                   :duration,
                                   team_matches_attributes: [:team_id],
-                                  player_stats: [:player_id,
-                                                              :hero_id,
-                                                              :team_id,
-                                                              :kills,
-                                                              :deaths,
-                                                              :assists,
-                                                              :gold]
                                  )
   end
 
