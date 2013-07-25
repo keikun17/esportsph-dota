@@ -3,6 +3,7 @@ class Player < ActiveRecord::Base
   has_many :player_stats
   accepts_nested_attributes_for :player_stats
 
+  has_many :matches, through: :player_stats
   has_many :heroes, through: :player_stats
 
   validates :name, presence: true
