@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130724105042) do
+ActiveRecord::Schema.define(version: 20130725135931) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                              default: "", null: false
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 20130724105042) do
     t.integer  "winning_team_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "duration"
   end
 
   add_index "matches", ["winning_team_id"], name: "index_matches_on_winning_team_id", using: :btree

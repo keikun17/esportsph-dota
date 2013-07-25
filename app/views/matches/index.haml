@@ -8,7 +8,8 @@
         %table.table
           %tr
             %th Match Name
-            %th Match up
+            %th Teams
+            %th Duration(S)
             %th Actions
           - @matches.each do |match|
             %tr
@@ -17,5 +18,7 @@
                 %strong #{match.team_1.name}
                 vs
                 %strong #{match.team_2.name}
+              %td= match.duration
+
               %td= link_to "Edit Roster", edit_roster_match_path(match)
 
