@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130725135931) do
+ActiveRecord::Schema.define(version: 20130725145702) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                              default: "", null: false
@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 20130725135931) do
     t.integer  "apm"
     t.integer  "creep_kills"
     t.integer  "creep_denies"
+    t.integer  "experience",   default: 0
   end
 
   add_index "player_stats", ["hero_id"], name: "index_player_stats_on_hero_id", using: :btree

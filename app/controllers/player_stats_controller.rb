@@ -21,7 +21,7 @@ class PlayerStatsController < ApplicationController
                                          :hero_id,
                                          :team_id,
                                          :kills,
-                                         :deaths,
+                                         :experience,
                                          :assists,
                                          :gold,
                                          :apm)

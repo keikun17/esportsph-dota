@@ -5,6 +5,7 @@
     %th K/D/A
     %th CK/CD
     %th Gold
+    %th Experience
     %th APM
     %th Actions
   - player_stats.each do |player_stat|
@@ -14,5 +15,6 @@
       %td  #{player_stat.kills.to_i}/#{player_stat.deaths}/#{player_stat.assists}
       %td  #{player_stat.creep_kills.to_i}/#{player_stat.creep_denies.to_i}
       %td= player_stat.gold
+      %td= player_stat.experience
       %td= player_stat.apm.to_i
       %td= link_to "Edit", "#edit#{player_stat.id}", role: "button", data: { toggle: "modal" }
