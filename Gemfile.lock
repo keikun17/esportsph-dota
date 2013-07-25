@@ -52,6 +52,10 @@ GEM
       orm_adapter (~> 0.0.3)
       warden (~> 1.1)
     diff-lcs (1.2.4)
+    draper (1.2.1)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      request_store (~> 1.0.3)
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
@@ -146,6 +150,7 @@ GEM
     rdoc (3.12.2)
       json (~> 1.4)
     remotipart (1.1.1)
+    request_store (1.0.5)
     rspec-core (2.13.1)
     rspec-expectations (2.13.0)
       diff-lcs (>= 1.1.3, < 2.0)
@@ -204,6 +209,7 @@ DEPENDENCIES
   capistrano
   coffee-rails (~> 4.0.0)
   devise
+  draper
   factory_girl_rails
   fastercsv
   haml

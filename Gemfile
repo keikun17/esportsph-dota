@@ -56,3 +56,4 @@ gem 'devise'
 
 gem 'haml'
 
+gem 'draper'
