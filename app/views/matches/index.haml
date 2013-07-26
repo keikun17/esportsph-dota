@@ -16,8 +16,12 @@
               %td= match.name
               %td
                 %strong #{match.team_1.name}
+                - if match.winner == match.team_1
+                  (W)
                 vs
                 %strong #{match.team_2.name}
+                - if match.winner == match.team_2
+                  (W)
               %td= display_duration(match.duration.to_i)
 
               %td= link_to "Edit Roster", edit_roster_match_path(match)
