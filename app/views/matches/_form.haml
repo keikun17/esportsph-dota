@@ -13,7 +13,7 @@
   #team-matches-fields
     %ul
     = f.fields_for :team_matches do |ff|
-      %li= ff.select :team_id, @teams.collect{|x| [x.name, x.id] }
+      %li= ff.select :team_id, Team.all.map{|x| [x.name, x.id] }
 
   %br
   = f.submit "Save"
