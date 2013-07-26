@@ -8,6 +8,7 @@
     %th # of Games
     %th Ave KDA
     %th Ave CK/CD
+    %th Ave Gold
     %th Ave APM
   - @team.players.each do |player|
     %tr
@@ -17,5 +18,6 @@
       %td= player.player_stats.count
       %td #{player.player_stats.average(:kills).to_f}/#{player.player_stats.average(:deaths).to_f}/#{player.player_stats.average(:assists).to_f}
       %td #{player.player_stats.average(:creep_kills).to_f}/#{player.player_stats.average(:creep_denies).to_f}
+      %td= player.player_stats.average(:gold).to_f
       %td= player.player_stats.average(:apm).to_f
 
