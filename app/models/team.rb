@@ -10,6 +10,10 @@ class Team < ActiveRecord::Base
   def win_count
     matches.where(winning_team_id: self.id).count
   end
+
+  def loss_count
+    matches.count - win_count
+  end
 end
 
 # == Schema Information

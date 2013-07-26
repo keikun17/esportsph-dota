@@ -3,9 +3,11 @@
     %th #
     %th Team Name
     %th Wins
+    %th Losses
   - @teams.each do |team|
     %tr
       %td= team.id
       %td= link_to team.name, team_path(team)
       %td= team.win_count
+      %td= team.loss_count
 
