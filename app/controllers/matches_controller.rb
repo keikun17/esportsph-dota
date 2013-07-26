@@ -6,9 +6,6 @@ class MatchesController < ApplicationController
 
   def new
     @match = Match.new
-    @match.team_matches.build
-    @match.team_matches.build
-    @teams = Team.all
   end
 
   def edit_roster
