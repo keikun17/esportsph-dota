@@ -12,6 +12,8 @@ class Match < ActiveRecord::Base
 
   belongs_to :winner, class_name: 'Team', foreign_key: :winning_team_id
 
+  validates :name, :winning_team_id, presence: true
+
   rails_admin do
     edit do
       field :name
