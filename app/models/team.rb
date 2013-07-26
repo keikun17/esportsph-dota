@@ -6,6 +6,10 @@ class Team < ActiveRecord::Base
 
   has_many :matches, through: :team_matches
   has_many :players
+
+  def win_count
+    matches.where(winning_team_id: self.id).count
+  end
 end
 
 # == Schema Information
