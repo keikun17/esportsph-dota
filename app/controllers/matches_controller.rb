@@ -19,8 +19,12 @@ class MatchesController < ApplicationController
   end
 
   def create
-    @match = Match.create(match_params)
-    redirect_to edit_roster_match_path(@match)
+    @match = Match.new(match_params)
+    if @match.save
+      redirect_to edit_roster_match_path(@match)
+    else
+      render 'new'
+    end
   end
 
   def update
