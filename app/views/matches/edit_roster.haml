@@ -8,7 +8,10 @@
 .row-fluid
   .span12
     #team_1_players
-      %h4 Team 1 : #{@match.team_1.name}
+      %h4
+        Team 1 : #{@match.team_1.name}
+        - if @match.winner.eql?(@match.team_1)
+          (W)
 
       = render 'players_stats', player_stats: @team_1_player_stats
 
@@ -20,7 +23,10 @@
         = render 'player_stat_fields', modal_id: 'team1Modal', representative: @match.player_stats.build(team_id: @match.team_1.id), team: @match.team_1
 
     #team_2_players
-      %h4 Team 2 #{@match.team_2.name}
+      %h4
+        Team 2 #{@match.team_2.name}
+        - if @match.winner.eql?(@match.team_2)
+          (W)
 
       = render 'players_stats', player_stats: @team_2_player_stats
 
