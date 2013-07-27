@@ -7,7 +7,7 @@ EsportsphDota::Application.routes.draw do
 
   resources :matches do
     member do
-      get 'edit_roster'
+      get 'edit_stats'
       patch 'update_competing_players'
     end
 

@@ -8,7 +8,7 @@ class MatchesController < ApplicationController
     @match = Match.new
   end
 
-  def edit_roster
+  def edit_stats
     @match = Match.find(params[:id])
     @team_1_player_stats = @match.player_stats.where(team: @match.team_1)
 
@@ -18,7 +18,7 @@ class MatchesController < ApplicationController
   def create
     @match = Match.new(match_params)
     if @match.save
-      redirect_to edit_roster_match_path(@match)
+      redirect_to edit_stats_match_path(@match)
     else
       render 'new'
     end
