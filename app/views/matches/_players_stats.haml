@@ -13,7 +13,7 @@
     %tr
       %td= player_stat.player.name
       %td= player_stat.hero.name if player_stat.hero
-      %td  #{player_stat.kills.to_i}/#{player_stat.deaths}/#{player_stat.assists}
+      %td  #{player_stat.kills.to_i}/#{player_stat.deaths.to_i}/#{player_stat.assists.to_i}
       %td  #{player_stat.creep_kills.to_i}/#{player_stat.creep_denies.to_i}
       %td= player_stat.gold
       %td #{player_stat.strength.to_i}/#{player_stat.intelligence.to_i}/#{player_stat.vitality.to_i}

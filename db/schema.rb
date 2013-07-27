@@ -68,9 +68,9 @@ ActiveRecord::Schema.define(version: 20130727124901) do
     t.integer  "creep_kills"
     t.integer  "creep_denies"
     t.integer  "experience",   default: 0
-    t.integer  "strength"
-    t.integer  "vitality"
-    t.integer  "intelligence"
+    t.integer  "strength",     default: 0
+    t.integer  "vitality",     default: 0
+    t.integer  "intelligence", default: 0
   end
 
   add_index "player_stats", ["hero_id"], name: "index_player_stats_on_hero_id", using: :btree
