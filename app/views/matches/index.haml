@@ -24,5 +24,8 @@
                   (W)
               %td= display_duration(match.duration.to_i)
 
-              %td= link_to "Edit Roster", edit_roster_match_path(match)
+              %td
+                = link_to "Edit Match", edit_match_path(match), class: 'btn btn-default'
+                = link_to "Edit Match Stats", edit_roster_match_path(match), class: 'btn btn-default'
+
 

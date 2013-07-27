@@ -24,10 +24,18 @@ class MatchesController < ApplicationController
     end
   end
 
+  def edit
+    @match = Match.find(params[:id])
+    render 'new'
+  end
+
   def update
     @match = Match.find(params[:id])
-    @match.update_attributes(match_params)
-    redirect_to edit_roster_match_path(@match)
+    if @match.update_attributes(match_params)
+      redirect_to matches_path
+    else
+      render 'edit'
+    end
   end
 
   private
