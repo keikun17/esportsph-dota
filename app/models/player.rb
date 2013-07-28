@@ -15,6 +15,10 @@ class Player < ActiveRecord::Base
     end
   end
 
+  def favorite_hero
+    player_stats.by_hero_play_count.first
+  end
+
 end
 
 # == Schema Information

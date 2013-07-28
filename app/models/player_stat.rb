@@ -9,6 +9,10 @@ class PlayerStat < ActiveRecord::Base
   validates :match_id, presence: true
   validates :team_id, presence: true
   validates :hero_id, presence: true
+
+  scope :by_hero_play_count, -> do
+    select("player_stats.*, count(hero_id) as play_count").group(:hero_id).order('play_count desc')
+  end
 end
 
 # == Schema Information
