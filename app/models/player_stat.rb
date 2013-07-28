@@ -13,6 +13,8 @@ class PlayerStat < ActiveRecord::Base
   scope :by_hero_play_count, -> do
     select("player_stats.*, count(hero_id) as play_count").group(:hero_id).order('play_count desc')
   end
+
+  delegate :name, to: :hero, allow_nil: true, prefix: true
 end
 
 # == Schema Information

@@ -6,6 +6,7 @@
     %th Name
     %th Service
     %th # of Games
+    %th Favorite Hero
     %th Ave KDA
     %th Ave CK/CD
     %th Ave Gold
@@ -16,6 +17,7 @@
       %td= player.name
       %td= display_duration(player.matches.sum(:duration))
       %td= player.player_stats.count
+      %td= player.favorite_hero.name if player.favorite_hero
       %td #{player.player_stats.average(:kills).to_f}/#{player.player_stats.average(:deaths).to_f}/#{player.player_stats.average(:assists).to_f}
       %td #{player.player_stats.average(:creep_kills).to_f}/#{player.player_stats.average(:creep_denies).to_f}
       %td= player.player_stats.average(:gold).to_f

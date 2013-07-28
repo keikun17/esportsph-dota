@@ -16,7 +16,9 @@ class Player < ActiveRecord::Base
   end
 
   def favorite_hero
-    player_stats.by_hero_play_count.first
+    if player_stats.by_hero_play_count.first
+      player_stats.by_hero_play_count.first.hero
+    end
   end
 
 end
