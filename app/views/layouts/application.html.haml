@@ -11,7 +11,8 @@
     .navbar.navbar-fixed-top
       .navbar-inner
         .container-fluid
-          %a.brand Esportsph Dota
+          = link_to "DOTA2PH",root_url, class: 'brand'
+
           .nav-collapse
             %ul.nav
               %li= link_to "Matches", matches_path
