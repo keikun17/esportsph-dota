@@ -1,0 +1,6 @@
+= form_tag vs_team_path, method: 'get' do
+  = select_tag :team_1, options_for_select(Team.all.collect{|x| [x.name, x.id]})
+  = select_tag :team_2, options_for_select(Team.all.map{|x| [x.name, x.id]})
+  = submit_tag "Go"
+
+

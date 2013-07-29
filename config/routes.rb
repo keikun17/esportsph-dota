@@ -10,12 +10,15 @@ EsportsphDota::Application.routes.draw do
       get 'edit_stats'
       patch 'update_competing_players'
     end
-
   end
+
 
   resources :player_stats
 
   resources :teams
+
+  get 'vs_team' => 'versus#team'
+  get 'vs_select' => 'versus#select'
 
   # You can have the root of your site routed with "root"
   root 'matches#index'
