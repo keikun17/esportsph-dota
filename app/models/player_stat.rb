@@ -15,6 +15,34 @@ class PlayerStat < ActiveRecord::Base
   end
 
   delegate :name, to: :hero, allow_nil: true, prefix: true
+
+  def self.average_apm
+    average(:apm).to_f
+  end
+
+  def self.average_kills
+    average(:creep_kills).to_f
+  end
+
+  def self.average_deaths
+    average(:deaths).to_f
+  end
+
+  def self.average_assists
+    average(:assists).to_f
+  end
+
+  def self.average_creep_kills
+    average(:creep_kills).to_f
+  end
+
+  def self.average_creep_denies
+    average(:creep_denies).to_f
+  end
+
+  def self.average_gold
+    average(:gold).to_f
+  end
 end
 
 # == Schema Information
