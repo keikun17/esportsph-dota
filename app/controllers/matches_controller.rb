@@ -6,6 +6,8 @@ class MatchesController < ApplicationController
 
   def new
     @match = Match.new
+    @match.team_matches.build
+    @match.team_matches.build
   end
 
   def edit_stats
