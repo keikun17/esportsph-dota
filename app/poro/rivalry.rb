@@ -2,8 +2,10 @@ class Rivalry
   attr_accessor :team_1, :team_2
 
   def initialize(team_1, team_2)
-    @team_1 = team_1
-    @team_2 = team_2
+    @team_1 = Rival.new(team_1)
+    @team_2 = Rival.new(team_2)
+    @team_1.wins = team_1_wins
+    @team_2.wins = team_2_wins
   end
 
   def matches
@@ -14,12 +16,14 @@ class Rivalry
     Match.where(id: combined.map(&:id))
   end
 
+  private
+
   def team_1_wins
-    matches.where(winning_team_id: team_1.id).count
+    matches.where(winning_team_id: @team_1.id).count
   end
 
   def team_2_wins
-    matches.where(winning_team_id: team_2.id).count
+    matches.where(winning_team_id: @team_2.id).count
   end
 
   def match_with_team_1
