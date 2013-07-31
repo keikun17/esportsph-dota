@@ -1,4 +1,4 @@
-class TeamVsTeam
+class Rivalry
   attr_accessor :team_1, :team_2
 
   def initialize(team_1, team_2)

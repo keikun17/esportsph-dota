@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe TeamVsTeam do
+describe Rivalry do
 
   let(:team_1) { double("team", name: 'Red') }
   let(:team_2) { double("team", name: 'Blue') }

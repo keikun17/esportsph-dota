@@ -17,8 +17,8 @@ EsportsphDota::Application.routes.draw do
 
   resources :teams
 
-  get 'vs_team' => 'versus#team'
-  get 'vs_select' => 'versus#select'
+  get 'rivalries' => 'rivalries#show', as: 'rivalry'
+  get 'rivalries/select' => 'rivalries#select', as: 'select_rivalry'
 
   # You can have the root of your site routed with "root"
   root 'matches#index'
