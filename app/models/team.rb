@@ -7,6 +7,14 @@ class Team < ActiveRecord::Base
   has_many :matches, through: :team_matches
   has_many :players
 
+  delegate :average_apm,
+    :average_gold,
+    :average_creep_kills,
+    :average_creep_denies,
+    :average_kills,
+    :average_deaths,
+    :average_assists, to: :player_stats, prefix: 'historical'
+
   def win_count
     matches.where(winning_team_id: self.id).count
   end
