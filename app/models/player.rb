@@ -8,7 +8,13 @@ class Player < ActiveRecord::Base
 
   validates :name, presence: true
 
-  delegate :average_apm, to: :player_stats, prefix: false
+  delegate :average_apm,
+    :average_gold,
+    :average_creep_kills,
+    :average_creep_denies,
+    :average_kills,
+    :average_deaths,
+    :average_assists, to: :player_stats, prefix: false
 
   rails_admin do
     edit do

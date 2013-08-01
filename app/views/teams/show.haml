@@ -18,8 +18,8 @@
       %td= display_duration(player.matches.sum(:duration))
       %td= player.player_stats.count
       %td= player.favorite_hero.name if player.favorite_hero
-      %td #{player.player_stats.average_kills}/#{player.player_stats.average_deaths}/#{player.player_stats.average_assists}
-      %td #{player.player_stats.average_creep_kills}/#{player.player_stats.average_creep_denies}
-      %td= player.player_stats.average_gold
-      %td= player.player_stats.average_apm
+      %td #{player.average_kills}/#{player.average_deaths}/#{player.average_assists}
+      %td #{player.average_creep_kills}/#{player.player_stats.average_creep_denies}
+      %td= player.average_gold
+      %td= player.average_apm
 
