@@ -4,6 +4,8 @@ class Team < ActiveRecord::Base
   has_many :hero_bans
   has_many :player_stats
 
+  has_many :current_player_stats, through: :players, source: :player_stats
+
   has_many :matches, through: :team_matches
   has_many :players
 
@@ -14,6 +16,14 @@ class Team < ActiveRecord::Base
     :average_kills,
     :average_deaths,
     :average_assists, to: :player_stats, prefix: 'historical'
+
+  delegate :average_apm,
+    :average_gold,
+    :average_creep_kills,
+    :average_creep_denies,
+    :average_kills,
+    :average_deaths,
+    :average_assists, to: :current_player_stats, prefix: 'current'
 
   def win_count
     matches.where(winning_team_id: self.id).count

@@ -11,40 +11,82 @@
 
 .row-fluid
   .span5.text-center
-    %h3= @vs_team.team_1.average_apm
+    %h3= @vs_team.team_1.historical_average_apm
   .span2.text-center
     %h3 APM
   .span5.text-center
-    %h3= @vs_team.team_2.average_apm
+    %h3= @vs_team.team_2.historical_average_apm
 
 .row-fluid
   .span5.text-center
-    %h3= @vs_team.team_1.average_gold
+    %h3= @vs_team.team_1.historical_average_gold
   .span2.text-center
     %h3 Ave Gold
   .span5.text-center
-    %h3= @vs_team.team_2.average_gold
+    %h3= @vs_team.team_2.historical_average_gold
 
 .row-fluid
   .span5.text-center
-    %h3= @vs_team.team_1.average_kills
+    %h3= @vs_team.team_1.historical_average_kills
   .span2.text-center
     %h3 Ave Kills
   .span5.text-center
-    %h3= @vs_team.team_2.average_kills
+    %h3= @vs_team.team_2.historical_average_kills
 
 .row-fluid
   .span5.text-center
-    %h3= @vs_team.team_1.average_deaths
+    %h3= @vs_team.team_1.historical_average_deaths
   .span2.text-center
     %h3 Ave Deaths
   .span5.text-center
-    %h3= @vs_team.team_2.average_deaths
+    %h3= @vs_team.team_2.historical_average_deaths
 
 .row-fluid
   .span5.text-center
-    %h3= @vs_team.team_1.average_assists
+    %h3= @vs_team.team_1.historical_average_assists
   .span2.text-center
     %h3 Ave Assists
   .span5.text-center
-    %h3= @vs_team.team_2.average_assists
+    %h3= @vs_team.team_2.historical_average_assists
+
+%hr
+
+.row-fluid
+  .span5.text-center
+    %h3= @vs_team.team_1.current_average_apm
+  .span2.text-center
+    %h3 APM
+  .span5.text-center
+    %h3= @vs_team.team_2.current_average_apm
+
+.row-fluid
+  .span5.text-center
+    %h3= @vs_team.team_1.current_average_gold
+  .span2.text-center
+    %h3 Ave Gold
+  .span5.text-center
+    %h3= @vs_team.team_2.current_average_gold
+
+.row-fluid
+  .span5.text-center
+    %h3= @vs_team.team_1.current_average_kills
+  .span2.text-center
+    %h3 Ave Kills
+  .span5.text-center
+    %h3= @vs_team.team_2.current_average_kills
+
+.row-fluid
+  .span5.text-center
+    %h3= @vs_team.team_1.current_average_deaths
+  .span2.text-center
+    %h3 Ave Deaths
+  .span5.text-center
+    %h3= @vs_team.team_2.current_average_deaths
+
+.row-fluid
+  .span5.text-center
+    %h3= @vs_team.team_1.current_average_assists
+  .span2.text-center
+    %h3 Ave Assists
+  .span5.text-center
+    %h3= @vs_team.team_2.current_average_assists
