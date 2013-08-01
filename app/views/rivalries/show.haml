@@ -1,9 +1,18 @@
 .row-fluid
-  .span6
+  .span5.text-center
     %h1= @vs_team.team_1.name
     %h2= @vs_team.team_1.wins
 
-  .span6
+  .span2.text-center
+
+  .span5.text-center
     %h1= @vs_team.team_2.name
     %h2= @vs_team.team_2.wins
 
+.row-fluid
+  .span5.text-center
+    %h3= @vs_team.team_1.average_apm
+  .span2.text-center
+    %h3 APM
+  .span5.text-center
+    %h3= @vs_team.team_2.average_apm

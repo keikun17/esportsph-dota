@@ -8,6 +8,8 @@ class Player < ActiveRecord::Base
 
   validates :name, presence: true
 
+  delegate :average_apm, to: :player_stats, prefix: false
+
   rails_admin do
     edit do
       field :name

@@ -1,10 +1,11 @@
 class Rivalry::Rival
-  attr_accessor :wins
-  attr_accessor :losses
+
+  attr_accessor :wins, :average_apm
 
   def initialize(team)
     @team = team
     @name = team.name
+    @average_apm = team.players.map(&:average_apm).sum / team.players.size
   end
 
   def id
