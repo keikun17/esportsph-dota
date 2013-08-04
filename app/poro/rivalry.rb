@@ -2,8 +2,8 @@ class Rivalry
   attr_accessor :team_1, :team_2
 
   def initialize(team_1, team_2)
-    @team_1 = Rival.new(team_1)
-    @team_2 = Rival.new(team_2)
+    @team_1 = Rival.find(team_1)
+    @team_2 = Rival.find(team_2)
     @team_1.wins = team_1_wins
     @team_2.wins = team_2_wins
   end
