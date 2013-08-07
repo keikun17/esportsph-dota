@@ -41,5 +41,6 @@ end
 #  winning_team_id :integer
 #  created_at      :datetime
 #  updated_at      :datetime
+#  duration        :integer          default(0)
 #
 

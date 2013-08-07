@@ -63,5 +63,9 @@ end
 #  apm          :integer
 #  creep_kills  :integer
 #  creep_denies :integer
+#  experience   :integer          default(0)
+#  strength     :integer          default(0)
+#  vitality     :integer          default(0)
+#  intelligence :integer          default(0)
 #
 
