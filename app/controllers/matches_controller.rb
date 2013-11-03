@@ -36,7 +36,7 @@ class MatchesController < ApplicationController
     if @match.update_attributes(match_params)
       redirect_to matches_path
     else
-      render 'edit'
+      render 'new'
     end
   end
 
