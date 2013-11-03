@@ -14,6 +14,16 @@ class Match < ActiveRecord::Base
 
   validates :name, :winning_team_id, presence: true
 
+  validate :no_duplicate_teams
+
+  def no_duplicate_teams
+    # quick hack to check team is unique
+    if self.team_matches.size != self.team_matches.collect(&:team_id).uniq.size
+      self.errors[:teams] << "duplicate team"
+      return false
+    end
+  end
+
   rails_admin do
     edit do
       field :name

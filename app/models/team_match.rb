@@ -1,6 +1,8 @@
 class TeamMatch < ActiveRecord::Base
   belongs_to :team
   belongs_to :match
+
+  validates_uniqueness_of :team_id, scope: :match_id
 end
 
 # == Schema Information
