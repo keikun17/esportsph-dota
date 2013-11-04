@@ -9,11 +9,7 @@ class Rivalry
   end
 
   def matches
-    #yuck
-    combined = team_1.matches & team_2.matches
-
-    #just so arel is returned
-    Match.where(id: combined.map(&:id))
+    team_1.matches.includes(:teams).where(teams: {id: team_2.id})
   end
 
   private
