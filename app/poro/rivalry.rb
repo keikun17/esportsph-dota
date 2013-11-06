@@ -4,7 +4,9 @@ class Rivalry
   def self.find(team_1, team_2)
     rivalry = Rivalry.new
     rivalry.team_1 = Rival.find(team_1)
+    rivalry.team_1.rivalry = rivalry
     rivalry.team_2 = Rival.find(team_1)
+    rivalry.team_2.rivalry = rivalry
     rivalry
     # rivalry.team_1.wins = team_1_wins
     # rivalry.team_2.wins = team_2_wins
