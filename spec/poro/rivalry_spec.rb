@@ -16,20 +16,15 @@ describe Rivalry do
   end
 
   describe "#team_1" do
-    it "returns the overall stats" do
-      pending
+    it "returns an instance of a rival" do
+       inst.team_1.should be_a_kind_of(Rivalry::Rival)
     end
 
-    it "returns the overall rivalry stats" do
-      pending
-    end
+  end
 
-    it "returns the present stats with current players" do
-      pending
-    end
-
-    it "returns the present rivalry stats with current players" do
-      pending
+  describe "#team_2" do
+    it "returns an instance of a rival" do
+       inst.team_2.should be_a_kind_of(Rivalry::Rival)
     end
   end
 end
